@@ -23,8 +23,8 @@
 #define Mod_L 4
 #define Mod_R 5
 #define Gaming 6
-#define Base_noMod 6
-#define Colemak 6
+#define Base_noMod 7
+#define Colemak 8
 
 &mt {
   quick-tap-ms = <100>;
