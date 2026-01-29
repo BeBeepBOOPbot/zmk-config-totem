@@ -9,66 +9,66 @@
 //                                                                      ▀  ▀  ▀
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-       
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 
 #define Base 0
 #define Num_Nav  1
 #define Symbol  2
 #define Function  3
-#define Mod_L 4
-#define Mod_R 5
-#define Gaming 6
-#define Base_noMod 7
-#define Colemak 8
+#define Mod 4
+#define Gaming 5
+#define No_Mod 6
 
 &mt {
-  quick-tap-ms = <100>;
-  global-quick-tap;
-  flavor = "tap-preferred";
-  tapping-term-ms = <170>;
+    quick-tap-ms = <100>;
+    global-quick-tap;
+    flavor = "tap-preferred";
+    tapping-term-ms = <170>;
 };
 
 / {
     combos {
         compatible = "zmk,combos";
+
         esc {
             bindings = <&kp ESC>;
             key-positions = <3 2>;
         };
+
         tab {
             bindings = <&kp TAB>;
             key-positions = <2 1>;
         };
+
         bspc {
             bindings = <&kp BSPC>;
             key-positions = <8 7>;
         };
+
         caps {
             bindings = <&kp CAPS>;
             key-positions = <4 5>;
         };
     };
 
-        keymap {
-                compatible = "zmk,keymap";
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+    keymap {
+        compatible = "zmk,keymap";
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         Base {
             display-name = "Base";
             bindings = <
-       &kp Q       &kp W        &kp E       &kp R         &kp T          &kp Y        &kp U         &kp I       &kp O        &kp P
-       &mt LGUI A  &mt LCTRL S  &mt LALT D  &mt LSHIFT F  &kp G          &kp H        &mt RSHIFT J  &mt RALT K  &mt RCTRL L  &mt RGUI SEMI
-&mo 4  &kp Z       &kp X        &kp C       &kp V         &kp B          &kp N        &kp M         &kp COMMA   &kp DOT      &kp FSLH       &mo 5
+       &kp Q       &kp W        &kp F       &kp P         &kp G          &kp J        &kp L         &kp U       &kp Y        &kp SEMI
+       &mt LGUI A  &mt LCTRL R  &mt LALT S  &mt LSHIFT T  &kp D          &kp H        &mt RSHIFT N  &mt RALT E  &mt RCTRL I  &mt RGUI O
+&mo 4  &kp Z       &kp X        &kp C       &kp V         &kp B          &kp K        &kp M         &kp COMMA   &kp DOT      &kp FSLH    &kp SQT
                                 &kp DEL     &lt 1 TAB     &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC    &kp RGUI
             >;
         };
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         Num-Nav {
             display-name = "Num_Nav";
@@ -80,7 +80,7 @@
             >;
         };
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         Symbol {
             display-name = "Symbol";
@@ -92,43 +92,31 @@
             >;
         };
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         Function {
             display-name = "Function";
             bindings = <
-        &sys_reset   &trans  &to 0   &to 6   &to 8        &kp F1   &kp F2   &kp F3   &kp F4   &sys_reset
+        &sys_reset   &trans  &to 0   &to 5   &to 0        &kp F1   &kp F2   &kp F3   &kp F4   &sys_reset
         &bootloader  &trans  &trans  &trans  &trans       &kp F5   &kp F6   &kp F7   &kp F8   &bootloader
 &trans  &trans       &trans  &trans  &trans  &trans       &kp F9   &kp F10  &kp F11  &kp F12  &trans       &trans
                              &trans  &trans  &kp SPACE    &kp RET  &trans   &trans
             >;
         };
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        Mod_L {
-            display-name = "Mod_L";
+        Mod {
+            display-name = "Mod";
             bindings = <
-        &kp LC(X)  &kp LC(C)  &kp LC(P)      &trans         &trans           &kp Y    &kp U     &kp I      &kp O    &kp P
-        &kp LGUI   &kp LCTRL  &kp LALT       &kp LSHFT      &trans           &kp H    &kp J     &kp K      &kp L    &kp SEMI
-&trans  &kp LC(Z)  &kp LC(Y)  &kp LC(LS(C))  &kp LC(LS(P))  &kp LC(LS(X))    &kp N    &kp M     &kp COMMA  &kp DOT  &kp FSLH  &trans
+        &kp LC(X)  &kp LC(C)  &kp LC(P)      &trans         &trans           &trans   &trans    &trans  &trans  &trans
+        &kp LGUI   &kp LCTRL  &kp LALT       &kp LSHFT      &trans           &trans   &trans    &trans  &trans  &trans
+&trans  &kp LC(Z)  &kp LC(Y)  &kp LC(LS(C))  &kp LC(LS(P))  &kp LC(LS(X))    &trans   &trans    &trans  &trans  &trans  &trans
                               &trans         &kp TAB        &kp SPACE        &kp RET  &kp BSPC  &trans
             >;
         };
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-        Mod_R {
-            display-name = "Mod_R";
-            bindings = <
-        &kp Q  &kp W  &kp E   &kp R    &kp T        &trans         &trans         &kp RC(P)      &kp RC(C)  &kp RC(X)
-        &kp A  &kp S  &kp D   &kp F    &kp G        &trans         &kp RSHFT      &kp RALT       &kp RCTRL  &kp RGUI
-&trans  &kp Z  &kp X  &kp C   &kp V    &kp B        &kp RS(RC(X))  &kp RS(RC(P))  &kp RS(RC(C))  &kp RC(Z)  &kp RC(Y)  &trans
-                      &trans  &kp TAB  &kp SPACE    &kp RET        &kp BSPC       &trans
-            >;
-        };
-
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         Gaming {
             display-name = "Gaming";
@@ -136,33 +124,22 @@
          &kp ESC    &kp Q  &kp W   &kp E    &kp R        &kp N1   &kp N2    &kp N3  &kp N4  &kp N5
          &kp LSHFT  &kp A  &kp S   &kp D    &kp F        &kp N6   &kp N7    &kp N8  &kp N9  &kp N0
 &kp TAB  &kp LCTRL  &kp Z  &kp X   &kp C    &kp V        &kp M    &kp I     &kp J   &kp G   &kp T   &kp TILDE
-                           &tog 7  &kp TAB  &kp SPACE    &kp RET  &kp BSPC  &to 0
+                           &tog 6  &kp TAB  &kp SPACE    &kp RET  &kp BSPC  &to 0
             >;
         };
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        Base_noMod {
-            display-name = "Base_noMod";
+        No_Mod {
+            display-name = "No_Mod";
             bindings = <
-       &kp Q  &kp W  &kp E   &kp R      &kp T          &kp Y        &kp U       &kp I      &kp O    &kp P
-       &kp A  &kp S  &kp D   &kp F      &kp G          &kp H        &kp J       &kp K      &kp L    &kp SEMI
-&mo 4  &kp Z  &kp X  &kp C   &kp V      &kp B          &kp N        &kp M       &kp COMMA  &kp DOT  &kp FSLH  &mo 5
-                     &tog 7  &lt 1 TAB  &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC  &to 0
+       &kp Q  &kp W  &kp F   &kp P      &kp G          &kp J        &kp L       &kp U      &kp Y    &kp SEMI
+       &kp A  &kp R  &kp S   &kp T      &kp D          &kp H        &kp N       &kp E      &kp I    &kp O
+&mo 4  &kp Z  &kp X  &kp C   &kp V      &kp B          &kp K        &kp M       &kp COMMA  &kp DOT  &kp FSLH  &mo 0
+                     &tog 6  &lt 1 TAB  &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC  &to 0
             >;
         };
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-        Colemak {
-            display-name = "Colemak";
-            bindings = <
-        &kp Q  &kp W  &kp F    &kp P      &kp G          &kp J        &kp L       &kp U      &kp Y    &kp SEMI
-        &kp A  &kp R  &kp S    &kp T      &kp D          &kp H        &kp N       &kp E      &kp I    &kp O
-&trans  &kp Z  &kp X  &kp C    &kp V      &kp B          &kp K        &kp M       &kp COMMA  &kp DOT  &kp FSLH  &trans
-                      &kp DEL  &lt 1 TAB  &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC  &to 0
-            >;
-        };
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
     };
 };
- 
