@@ -64,7 +64,7 @@
        &kp Q       &kp W        &kp F       &kp P         &kp G          &kp J        &kp L         &kp U       &kp Y        &kp SEMI
        &mt LGUI A  &mt LCTRL R  &mt LALT S  &mt LSHIFT T  &kp D          &kp H        &mt RSHIFT N  &mt RALT E  &mt RCTRL I  &mt RGUI O
 &mo 4  &kp Z       &kp X        &kp C       &kp V         &kp B          &kp K        &kp M         &kp COMMA   &kp DOT      &kp FSLH    &kp SQT
-                                &kp DEL     &lt 1 TAB     &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC    &kp RGUI
+                                &kp LGUI    &lt 1 TAB     &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC    &kp RGUI
             >;
         };
 
@@ -75,7 +75,7 @@
             bindings = <
                 &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6    &kp N7     &kp N8     &kp N9     &kp N0
                 &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp CAPSLOCK
-&kp LEFT_SHIFT  &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp RG(N0)    &kp HOME  &kp PG_DN  &kp PG_UP  &kp INS    &kp END       &trans
+&kp LEFT_SHIFT  &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp RG(N0)    &kp HOME  &kp PG_DN  &kp PG_UP  &kp INS    &kp END       &kp GRAVE
                                         &trans      &trans      &kp SPACE     &kp RET   &mo 3      &trans
             >;
         };
@@ -97,8 +97,8 @@
         Function {
             display-name = "Function";
             bindings = <
-        &sys_reset   &trans  &to 0   &to 5   &to 0        &kp F1   &kp F2   &kp F3   &kp F4   &sys_reset
-        &bootloader  &trans  &trans  &trans  &trans       &kp F5   &kp F6   &kp F7   &kp F8   &bootloader
+        &sys_reset   &trans  &trans  &to 5   &to 0        &kp F1   &kp F2   &kp F3   &kp F4   &sys_reset
+        &bootloader  &trans  &trans  &trans  &kp F22      &kp F5   &kp F6   &kp F7   &kp F8   &bootloader
 &trans  &trans       &trans  &trans  &trans  &trans       &kp F9   &kp F10  &kp F11  &kp F12  &trans       &trans
                              &trans  &trans  &kp SPACE    &kp RET  &trans   &trans
             >;
@@ -109,13 +109,14 @@
         Mod {
             display-name = "Mod";
             bindings = <
-        &kp LC(X)  &kp LC(C)  &kp LC(P)      &trans         &trans           &trans   &trans    &trans  &trans  &trans
+        &kp LC(X)  &kp LC(C)  &kp LC(V)      &trans         &trans           &trans   &trans    &trans  &trans  &trans
         &kp LGUI   &kp LCTRL  &kp LALT       &kp LSHFT      &trans           &trans   &trans    &trans  &trans  &trans
-&trans  &kp LC(Z)  &kp LC(Y)  &kp LC(LS(C))  &kp LC(LS(P))  &kp LC(LS(X))    &trans   &trans    &trans  &trans  &trans  &trans
+&trans  &kp LC(Z)  &kp LC(Y)  &kp LC(LS(C))  &kp LC(LS(V))  &kp LC(LS(X))    &trans   &trans    &trans  &trans  &trans  &trans
                               &trans         &kp TAB        &kp SPACE        &kp RET  &kp BSPC  &trans
             >;
         };
 
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         Gaming {
