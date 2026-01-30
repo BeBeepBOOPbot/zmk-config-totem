@@ -12,8 +12,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 
 #define Base 0
 #define Num_Nav  1
@@ -63,9 +61,9 @@
         Base {
             display-name = "Base";
             bindings = <
-       &kp Q       &kp W        &kp F       &kp P         &kp G          &kp J        &kp L         &kp U       &kp Y        &kp SEMI
-       &mt LGUI A  &mt LCTRL R  &mt LALT S  &mt LSHIFT T  &kp D          &kp H        &mt RSHIFT N  &mt RALT E  &mt RCTRL I  &mt RGUI O
-&mo 4  &kp Z       &kp X        &kp C       &kp V         &kp B          &kp K        &kp M         &kp COMMA   &kp DOT      &kp FSLH    &kp SQT
+       &kp Q        &kp W       &kp F       &kp P         &kp G          &kp J        &kp L         &kp U       &kp Y       &kp SEMI
+       &mt LCTRL A  &mt LALT R  &mt LGUI S  &mt LSHIFT T  &kp D          &kp H        &mt RSHIFT N  &mt RGUI E  &mt RALT I  &mt RCTRL O
+&mo 4  &kp Z        &kp X       &kp C       &kp V         &kp B          &kp K        &kp M         &kp COMMA   &kp DOT     &kp FSLH     &kp SQT
                                 &kp LGUI    &lt 1 TAB     &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC    &kp RGUI
             >;
         };
