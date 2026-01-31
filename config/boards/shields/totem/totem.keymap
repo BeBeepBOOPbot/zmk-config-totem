@@ -17,9 +17,15 @@
 #define Num_Nav  1
 #define Symbol  2
 #define Function  3
-#define Mod 4
-#define Gaming 5
-#define No_Mod 6
+#define Gaming 4
+#define No_Mod 5
+
+&mt {
+    quick-tap-ms = <100>;
+    global-quick-tap;
+    flavor = "tap-preferred";
+    tapping-term-ms = <170>;
+};
 
 / {
     combos {
@@ -44,6 +50,26 @@
             bindings = <&kp CAPS>;
             key-positions = <4 5>;
         };
+
+        undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <21 22>;
+        };
+
+        redo {
+            bindings = <&kp LC(Y)>;
+            key-positions = <22 23>;
+        };
+
+        copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <23 24>;
+        };
+
+        paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <24 25>;
+        };
     };
 
     keymap {
@@ -56,8 +82,8 @@
             bindings = <
        &kp Q        &kp W       &kp F       &kp P         &kp G          &kp J        &kp L         &kp U       &kp Y       &kp SEMI
        &mt LCTRL A  &mt LALT R  &mt LGUI S  &mt LSHIFT T  &kp D          &kp H        &mt RSHIFT N  &mt RGUI E  &mt RALT I  &mt RCTRL O
-&mo 4  &kp Z        &kp X       &kp C       &kp V         &kp B          &kp K        &kp M         &kp COMMA   &kp DOT     &kp FSLH     &kp SQT
-                                &trans      &lt 1 TAB     &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC    &kp RGUI
+&mo 0  &kp Z        &kp X       &kp C       &kp V         &kp B          &kp K        &kp M         &kp COMMA   &kp DOT     &kp FSLH     &kp SQT
+                                &kp LGUI    &lt 1 TAB     &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC    &kp RGUI
             >;
         };
 
@@ -90,7 +116,7 @@
         Function {
             display-name = "Function";
             bindings = <
-        &trans  &trans  &trans  &to 5   &to 0        &kp F1   &kp F2   &kp F3   &kp F4   &trans
+        &trans  &trans  &trans  &to 4   &to 0        &kp F1   &kp F2   &kp F3   &kp F4   &trans
         &trans  &trans  &trans  &trans  &kp F22      &kp F5   &kp F6   &kp F7   &kp F8   &trans
 &trans  &trans  &trans  &trans  &trans  &trans       &kp F9   &kp F10  &kp F11  &kp F12  &trans  &trans
                         &trans  &trans  &kp SPACE    &kp RET  &trans   &trans
@@ -98,17 +124,6 @@
         };
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-        Mod {
-            display-name = "Mod";
-            bindings = <
-        &kp LC(X)  &kp LC(C)  &kp LC(V)      &trans         &trans           &trans   &trans    &trans  &trans  &trans
-        &kp LCTRL  &kp LALT   &kp LGUI       &kp LSHFT      &trans           &trans   &trans    &trans  &trans  &trans
-&trans  &kp LC(Z)  &kp LC(Y)  &kp LC(LS(C))  &kp LC(LS(V))  &kp LC(LS(X))    &trans   &trans    &trans  &trans  &trans  &trans
-                              &trans         &kp TAB        &kp SPACE        &kp RET  &kp BSPC  &trans
-            >;
-        };
-
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
@@ -118,7 +133,7 @@
          &kp ESC    &kp Q  &kp W   &kp E    &kp R        &kp N1   &kp N2    &kp N3  &kp N4  &kp N5
          &kp LSHFT  &kp A  &kp S   &kp D    &kp F        &kp N6   &kp N7    &kp N8  &kp N9  &kp N0
 &kp TAB  &kp LCTRL  &kp Z  &kp X   &kp C    &kp V        &kp M    &kp I     &kp J   &kp G   &kp T   &kp TILDE
-                           &tog 6  &kp TAB  &kp SPACE    &kp RET  &kp BSPC  &to 0
+                           &tog 5  &kp TAB  &kp SPACE    &kp RET  &kp BSPC  &to 0
             >;
         };
 
@@ -129,8 +144,8 @@
             bindings = <
        &kp Q  &kp W  &kp F   &kp P      &kp G          &kp J        &kp L       &kp U      &kp Y    &kp SEMI
        &kp A  &kp R  &kp S   &kp T      &kp D          &kp H        &kp N       &kp E      &kp I    &kp O
-&mo 4  &kp Z  &kp X  &kp C   &kp V      &kp B          &kp K        &kp M       &kp COMMA  &kp DOT  &kp FSLH  &mo 0
-                     &tog 6  &lt 1 TAB  &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC  &to 0
+&mo 0  &kp Z  &kp X  &kp C   &kp V      &kp B          &kp K        &kp M       &kp COMMA  &kp DOT  &kp FSLH  &mo 0
+                     &tog 5  &lt 1 TAB  &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC  &to 0
             >;
         };
 
