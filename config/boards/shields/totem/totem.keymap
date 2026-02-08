@@ -117,7 +117,7 @@
             display-name = "Function";
             bindings = <
         &trans  &trans  &trans  &to 4   &to 0        &kp F1   &kp F2   &kp F3   &kp F4   &trans
-        &trans  &trans  &trans  &trans  &kp F22      &kp F5   &kp F6   &kp F7   &kp F8   &trans
+        &trans  &trans  &trans &trans &studio_unlock &kp F5   &kp F6   &kp F7   &kp F8   &trans
 &trans  &trans  &trans  &trans  &trans  &trans       &kp F9   &kp F10  &kp F11  &kp F12  &trans  &trans
                         &trans  &trans  &kp SPACE    &kp RET  &trans   &trans
             >;
