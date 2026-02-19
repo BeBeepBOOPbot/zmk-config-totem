@@ -58,7 +58,6 @@
         redo {
             bindings = <&kp LC(Y)>;
             key-positions = <22 23>;
-    snippet: studio-rpc-usb-uart
         };
 
         copy {
