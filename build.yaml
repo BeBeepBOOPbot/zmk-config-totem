@@ -5,9 +5,8 @@ include:
   - board: xiao_ble
     shield: totem_right
     artifact-name: totem_dongle_right
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_dongle prospector_adapter
-    cmake-args: -DCONFIG_ZMK_SPLIT=y
     artifact-name: dongle-screen
   - board: xiao_ble
     shield: settings_reset
