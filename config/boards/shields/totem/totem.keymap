@@ -14,12 +14,11 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define Base 0
-#define Num  1
+#define Num_Nav  1
 #define Symbol  2
 #define Function  3
-#define Nav 4
-#define Gaming 5
-#define No_Mod 6
+#define Gaming 4
+#define No_Mod 5
 
 &mt {
     quick-tap-ms = <100>;
@@ -71,16 +70,6 @@
             bindings = <&kp LC(V)>;
             key-positions = <24 25>;
         };
-
-        quote {
-            bindings = <&kp SQT>;
-            key-positions = <9 8>;
-        };
-
-        space {
-            bindings = <&kp SPACE>;
-            key-positions = <34 33>;
-        };
     };
 
     keymap {
@@ -92,69 +81,71 @@
             display-name = "Base";
             bindings = <
        &kp Q        &kp W       &kp F       &kp P         &kp G          &kp J        &kp L         &kp U       &kp Y       &kp SEMI
-       &mt LCTRL A  &mt LGUI R  &mt LALT S  &mt LSHIFT T  &kp D          &kp H        &mt RSHIFT N  &mt RALT E  &mt RGUI I  &mt RCTRL O
-&to 6  &kp Z        &kp X       &kp C       &kp V         &kp B          &kp K        &kp M         &kp COMMA   &kp DOT     &kp FSLH     &kp SQT
-                                &kp DELETE  &lt 1 TAB     &lt 4 SPACE    &lt 3 ENTER  &lt 2 BSPC    &kp RGUI
+       &mt LCTRL A  &mt LALT R  &mt LGUI S  &mt LSHIFT T  &kp D          &kp H        &mt RSHIFT N  &mt RGUI E  &mt RALT I  &mt RCTRL O
+&mo 0  &kp Z        &kp X       &kp C       &kp V         &kp B          &kp K        &kp M         &kp COMMA   &kp DOT     &kp FSLH     &kp SQT
+                                &kp LGUI    &lt 1 TAB     &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC    &kp RGUI
             >;
         };
 
-        Num {
-            display-name = "Num";
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        Num-Nav {
+            display-name = "Num_Nav";
             bindings = <
-        &studio_unlock  &kp INS     &kp HOME  &kp PAGE_UP    &kp CAPSLOCK    &trans   &kp N7  &kp N8  &kp N9  &trans
-        &trans          &kp DELETE  &kp END   &kp PAGE_DOWN  &trans          &trans   &kp N4  &kp N5  &kp N6  &trans
-&trans  &trans          &trans      &trans    &trans         &trans          &kp N0   &kp N1  &kp N2  &kp N3  &trans  &to 0
-                                    &tog 1    &trans         &kp SPACE       &kp RET  &mo 3   &trans
+                &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6    &kp N7     &kp N8     &kp N9     &kp N0
+                &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp CAPSLOCK
+&kp LEFT_SHIFT  &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp RG(N0)    &kp HOME  &kp PG_DN  &kp PG_UP  &kp INS    &kp END       &kp GRAVE
+                                        &trans      &trans      &kp SPACE     &kp RET   &mo 3      &trans
             >;
         };
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         Symbol {
             display-name = "Symbol";
             bindings = <
-        &trans  &kp AT    &kp HASH       &kp DLLR   &kp PRCNT    &trans        &trans     &kp LPAR  &kp RPAR  &trans
-        &trans  &kp EXCL  &kp CARET      &kp AMPS   &kp STAR     &kp MINUS     &kp EQUAL  &kp LBKT  &kp RBKT  &trans
-&trans  &trans  &kp PIPE  &kp BACKSLASH  &kp GRAVE  &kp TILDE    &kp UNDER     &kp PLUS   &kp LBRC  &kp RBRC  &trans  &to 0
-                          &trans         &mo 3      &kp SPACE    &lt 0 RETURN  &trans     &tog 2
+        &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp STAR  &kp LPAR  &kp RPAR
+        &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH
+&trans  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
+                          &trans    &mo 3     &kp SPACE    &kp RET    &trans     &kp RGUI
             >;
         };
 
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
         Function {
-            display-name = "Funct";
+            display-name = "Function";
             bindings = <
-        &trans  &trans  &trans  &to 5   &to 0        &kp F1   &kp F2   &kp F3   &kp F4   &trans
-        &trans  &trans  &trans  &to 1   &to 2        &kp F5   &kp F6   &kp F7   &kp F8   &trans
-&trans  &trans  &trans  &trans  &to 4   &to 6        &kp F9   &kp F10  &kp F11  &kp F12  &trans  &trans
+        &trans  &trans  &trans  &to 4   &to 0        &kp F1   &kp F2   &kp F3   &kp F4   &trans
+        &trans  &trans  &trans &trans &studio_unlock &kp F5   &kp F6   &kp F7   &kp F8   &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &kp F9   &kp F10  &kp F11  &kp F12  &trans  &trans
                         &trans  &trans  &kp SPACE    &kp RET  &trans   &trans
             >;
         };
 
-        Nav {
-            display-name = "Nav";
-            bindings = <
-            &trans      &trans      &trans      &trans      &trans        &trans    &trans    &trans  &trans     &trans
-            &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&kp LSHIFT  &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)    &trans    &trans    &trans  &trans     &trans  &to 0
-                                    &trans      &trans      &trans        &trans    &trans    &trans
-            >;
-        };
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         Gaming {
             display-name = "Gaming";
             bindings = <
-         &kp ESC    &kp Q  &kp W   &kp E    &kp R        &kp N1   &kp N2    &kp N3     &kp N4  &kp N5
-         &kp LSHFT  &kp A  &kp S   &kp D    &kp F        &kp N6   &kp N7    &kp N8     &kp N9  &kp N0
-&kp TAB  &kp LCTRL  &kp Z  &kp X   &kp C    &kp V        &kp M    &kp I     &kp J      &kp G   &kp T   &to 0
-                           &tog 6  &kp TAB  &kp SPACE    &kp RET  &kp BSPC  &kp TILDE
+         &kp ESC    &kp Q  &kp W   &kp E    &kp R        &kp N1   &kp N2    &kp N3  &kp N4  &kp N5
+         &kp LSHFT  &kp A  &kp S   &kp D    &kp F        &kp N6   &kp N7    &kp N8  &kp N9  &kp N0
+&kp TAB  &kp LCTRL  &kp Z  &kp X   &kp C    &kp V        &kp M    &kp I     &kp J   &kp G   &kp T   &kp TILDE
+                           &tog 5  &kp TAB  &kp SPACE    &kp RET  &kp BSPC  &to 0
             >;
         };
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         No_Mod {
             display-name = "No_Mod";
             bindings = <
        &kp Q  &kp W  &kp F   &kp P      &kp G          &kp J        &kp L       &kp U      &kp Y    &kp SEMI
        &kp A  &kp R  &kp S   &kp T      &kp D          &kp H        &kp N       &kp E      &kp I    &kp O
-&to 0  &kp Z  &kp X  &kp C   &kp V      &kp B          &kp K        &kp M       &kp COMMA  &kp DOT  &kp FSLH  &to 0
-                     &tog 6  &lt 1 TAB  &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC  &kp RGUI
+&mo 0  &kp Z  &kp X  &kp C   &kp V      &kp B          &kp K        &kp M       &kp COMMA  &kp DOT  &kp FSLH  &mo 0
+                     &tog 5  &lt 1 TAB  &lt 3 SPACE    &lt 3 ENTER  &lt 2 BSPC  &to 0
             >;
         };
 
